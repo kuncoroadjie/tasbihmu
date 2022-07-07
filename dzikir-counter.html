@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzikir Counter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>DZIKIR COUNTER</h1>
+            <p>Program penghitung dzikir menggunakan speech recognition</p>
+        </div>
+        <div class="btn-wrapper">
+            <button class="btn-mulai" type="button" onclick="runSpeechRecognition()">Mulai Dzikir</button>
+            <i class="fas fa-question-circle" onclick="openDialog(), help()"></i>
+            <p><span id="action"></span></p>
+        </div>
+        <div class="list-lafadz-wrapper">
+            <div class="list-lafadz">
+                <p>أَسْتَغْفِرُ اللَّهَ</p>
+                <p>Astagfirullah</p>
+            </div>
+            <div class="list-lafadz">
+                <p>سُبْحَانَ ٱللَّٰهِ</p>
+                <p>Subhanallah</p>
+            </div>
+            <div class="list-lafadz">
+                <p>الْحَمْدُ للَّهِ</p>
+                <p>Alhamdulillah</p>
+            </div>
+            <div class="list-lafadz">
+                <p>ٱللَّٰهُ أَكْبَرُ,</p>
+                <p>Allahu Akbar</p>
+            </div>
+            <div class="list-lafadz">
+                <p> لآإِلَهَ إِلاَّ ٱللَّٰهُ</p>
+                <p>Lailahailallah </p>
+            </div>        
+        </div>            
+        <div class="counter-wrapper">
+            <p>Counter</p>
+            <div class="counter-box" id="counter">0</div>
+            <button class="btn-reset" onclick="resetCounter()">Reset</button>
+        </div>
+        <div class="filler">
+            <p>Allah Subhanahu Wa Ta'ala berfirman :</p>
+            <p>"Hai orang-orang yang beriman, berzikirlah (dengan menyebut nama) Allah, dzikir yang sebanyak-banyaknya.<br> Dan bertasbihlah kepada-Nya di waktu pagi dan petang."</p>
+            <p>Al Qur'an Surat Al Ahzab Ayat 41</p>
+            <div class="creator">
+                <p><b>2022@Kuncoro Adji</b></p>
+            </div>
+        </div> 
+
+        <!-- Dialog-box Bantuan -->
+        <dialog id="dialog" >
+            <div class="close-dialog" onclick="closeDialog()">
+                <i class="fas fa-window-close"></i>
+            </div>
+            <div class="dialog-container">
+                <div class="dialog-header">
+                    
+                    <h2><i class="fas fa-question-circle"></i> BANTUAN</h2>
+                </div>
+                <div class="main-dialog">
+                    <table>
+                    <tr>
+                        <td><div class="btn-mulai">Mulai dzikir</div></td>
+                        <td>Klik tombol mulai dzikir berwarna hijau untuk memulai. Speech recognition akan aktif.</td>
+                    </tr>
+                    <tr>
+                        <td><div class="list-lafadz">
+                            <p>أَسْتَغْفِرُ اللَّهَ</p>
+                            <p>Astagfirullah</p>
+                        </div></td>
+                        <td><p>Kemudian silahkan berdzikir sesuai dengan lafadz yang tersedia. Maka pengitung akan berjalan.</p></td>
+                    </tr>
+                    <tr>
+                        <td><div class="btn-reset">Reset</div></td>
+                        <td><p>Untuk me-reset counter, klik tombol reset berwarna merah dibawah counter. Maka hitungan akan kembali ke 0.</p></td>
+                    </tr> 
+                    </table>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+    <script src="function.js"></script>
+</body>
+</html>
