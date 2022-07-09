@@ -16,25 +16,30 @@
 .title{
     margin: 20px 0;
     color: #4dccbd;
+    font-size: 1.2em;
+}
+.title p{
+    font-family: serif;
+    font-size: 1.3em;
 }
 .btn-wrapper{
     height: 70px;
     color:#4dccbd;
 }
-.btn-wrapper i{
+.btn-wrapper .fa-question-circle{
     margin-top: 7px;
     position: absolute;
-    font-size: 1.5em;
+    font-size: 1.7em;
     margin-left: 20px;
 }
-.btn-mulai, .btn-reset{
+.btn{
     cursor:pointer;
     width: 100px;
     height: 46px;
     border: none;
     border-radius: 3px;
 }
-.btn-mulai{
+.btn-mulai{           
     background-color: aquamarine;
     border-bottom: 6px solid mediumaquamarine ;
 }
@@ -57,9 +62,20 @@
 }
 .btn-disable{
     background-color: gray;
-    margin-top: 6px;
+    margin-top: 2px;
     border-bottom: none;
     pointer-events: none;
+    cursor: not-allowed;
+}
+.btn-target{
+    position: absolute;
+    left: 40%;
+    width: 55px;
+    height: 46px;
+    background-color: rgb(240, 237, 48);
+}
+.btn-target:hover{
+    background-color: rgb(245, 236, 106);
 }
 .list-lafadz-wrapper{
     display:flex;
@@ -89,7 +105,7 @@
     border-radius: 10px;
 }
 .filler{
-    font-size: 0.8em;
+    font-size: 13px;
     color: #4dccbd;
 }
 .creator{
@@ -101,54 +117,62 @@
     margin-top: 18px;
     font-size: 1.2em;
 }
-/* Dialog-box bantuan */
-#dialog{
-    font-family: 'Times New Roman', 'Times', 'serif';
-    padding: 7px;
-    margin: auto;
-    width: 500px;
-    border: none;
-    border-radius: 10px;
-}
-#dialog::backdrop{
+
+/* Modal bantuan */
+.modal-help{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
 }
-.close-dialog{
-    float: right;
+.modal-active{
+    visibility: visible;
+    opacity: 1;
 }
-.fa-window-close{
+.modal-content{
+    background-color: white;
+    width: 500px;
+    border-radius: 10px;
+    padding: 0 20px 20px 20px;
+}
+.modal-header{
+    color: #4dccbd;
+}
+.modal-header .fa-window-close{
     font-size: 1.7em;
     background: transparent;
     color: #ff5050;
     cursor: pointer;
 }
-.dialog-container{
-    text-align: center;
-    padding: 30px 20px;
+.modal-header span{
+    position: relative;
+    top: 5px;
+    left: 230px;
 }
-.dialog-header{
-    color: #4dccbd;
-}
-.main-dialog .btn-mulai, .btn-reset{
-    text-align: center;
-    line-height: 40px;
-}
-.main-dialog{
+.modal-body {
+    padding-top: 20px;
     text-align: justify;
-    margin-top: 25px;
     font-size: 0.9em;
 }
-.main-dialog div{
+.modal-body div{
     margin: auto;
-    text-align: center;
-} 
-.main-dialog i{
-    font-size: 1.7em;
-    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: static;
+    font-size: 0.9em;
 }
-.main .fa-angle-double-right{
-    font-size: 1em;
-}
-th, td{
+.modal-body th, td{
     padding: 0 10px 10px 10px;
 }
+        
+    

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dzikir Counter</title>
+    <title>TASBIHMU</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +15,13 @@
 <body>
     <div class="container">
         <div class="title">
-            <h1>DZIKIR COUNTER</h1>
-            <p>Program penghitung dzikir menggunakan speech recognition</p>
+            <h1>TASBIHMU</h1>
+            <p>Penghitung dzikir menggunakan speech recognition</p>
         </div>
         <div class="btn-wrapper">
-            <button class="btn-mulai" type="button" onclick="runSpeechRecognition()">Mulai Dzikir</button>
-            <i class="fas fa-question-circle" onclick="openDialog(), help()"></i>
+            <button class="btn btn-target" onclick="target()">Target<p id="target-count"><b>-</b></p></button>
+            <button class="btn btn-mulai" type="button" onclick="runSpeechRecognition()">Mulai Dzikir</button>
+            <i class="fas fa-question-circle" onclick="openDialog(), speak()"></i>
             <p><span id="action"></span></p>
         </div>
         <div class="list-lafadz-wrapper">
@@ -46,35 +47,40 @@
             </div>        
         </div>            
         <div class="counter-wrapper">
-            <p>Counter</p>
+            <p>COUNTER</p>
             <div class="counter-box" id="counter">0</div>
-            <button class="btn-reset" onclick="resetCounter()">Reset</button>
+            <button class=" btn btn-reset" onclick="resetCounter()">Reset</button>
         </div>
         <div class="filler">
-            <p>Allah Subhanahu Wa Ta'ala berfirman :</p>
+            <p>TASBIHMU merupakan aplikasi penghitung dzikir online berbasis web. Kelebihan aplikasi ini adalah mudah dibawa</p>
+            <p>kemana-mana dan dapat digunakan kapanpun secara gratis baik saat bersantai ataupun dalam perjalanan.</p>
+            <p>Semoga bermanfaat.</p>
+            <!-- <p>Allah Subhanahu Wa Ta'ala berfirman :</p>
             <p>"Hai orang-orang yang beriman, berzikirlah (dengan menyebut nama) Allah, dzikir yang sebanyak-banyaknya.<br> Dan bertasbihlah kepada-Nya di waktu pagi dan petang."</p>
-            <p>Al Qur'an Surat Al Ahzab Ayat 41</p>
+            <p>Al Qur'an Surat Al Ahzab Ayat 41</p> -->
             <div class="creator">
-                <p><b>2022@Kuncoro Adji</b></p>
+                <p><b>TASBIHMU V2 - 2022@Kuncoro Adji</b></p>
             </div>
         </div> 
 
         <!-- Dialog-box Bantuan -->
-        <dialog id="dialog" >
-            <div class="close-dialog" onclick="closeDialog()">
-                <i class="fas fa-window-close"></i>
-            </div>
-            <div class="dialog-container">
-                <div class="dialog-header">
-                    
+        <div id="modal" class="modal-help">
+            
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="fas fa-window-close" onclick="closeModal()"></span>
                     <h2><i class="fas fa-question-circle"></i> BANTUAN</h2>
                 </div>
-                <div class="main-dialog">
+                <div class="modal-body">
                     <table>
                     <tr>
-                        <td><div class="btn-mulai">Mulai dzikir</div></td>
+                        <td><div class="btn btn-mulai">Mulai dzikir</div></td>
                         <td>Klik tombol mulai dzikir berwarna hijau untuk memulai. Speech recognition akan aktif.</td>
                     </tr>
+                    <tr>
+                        <td><div class="btn-target">Target<p>33</p></div></td>
+                        <td><p>Target dzikir digunakan untuk membatasi jumlah lafadz dzikir sesuai keinginan. Apabila anda ingin berdzikir tanpa target maka langsung tekan mulai dzikir</p></td>
+                    </tr> 
                     <tr>
                         <td><div class="list-lafadz">
                             <p>أَسْتَغْفِرُ اللَّهَ</p>
@@ -83,15 +89,14 @@
                         <td><p>Kemudian silahkan berdzikir sesuai dengan lafadz yang tersedia. Maka pengitung akan berjalan.</p></td>
                     </tr>
                     <tr>
-                        <td><div class="btn-reset">Reset</div></td>
+                        <td><div class="btn btn-reset">Reset</div></td>
                         <td><p>Untuk me-reset counter, klik tombol reset berwarna merah dibawah counter. Maka hitungan akan kembali ke 0.</p></td>
                     </tr> 
                     </table>
                 </div>
             </div>
-        </dialog>
+        </div>
     </div>
-
     <script src="function.js"></script>
 </body>
 </html>
