@@ -1,5 +1,6 @@
 # TASBIHMU
-Tasbih Digital - Penghitung Dzikir dengan Speech Recognition
+Tasbih Digital - Penghitung Dzikir Online Dengan Speech Recognition
 
-![tasbihmu](https://user-images.githubusercontent.com/64425575/177797279-6c6809bd-1956-40bf-8572-31160198b366.png)
+![tasbihmu-v2](https://user-images.githubusercontent.com/64425575/178093566-cdda21a1-c85b-4262-9b35-d2dc14f5d47c.png)
+
 
